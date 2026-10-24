@@ -1,5 +1,26 @@
 {
-  "dependencies": {
-    "react-router-dom": "^7.18.4"
-  }
+  "name": "campus-lost-and-found",
+  "version": "1.0.0",
+  "description": "Campus Lost and Found Portal - Full Stack MERN Application",
+  "private": true,
+  "scripts": {
+    "start": "node server/src/server.js",
+    "server": "npm --prefix server run dev",
+    "server:start": "node server/src/server.js",
+    "client": "npm --prefix client run dev",
+    "client:build": "npm --prefix client run build",
+    "build": "npm --prefix client run build",
+    "dev": "echo \"Run 'npm run server' in one terminal and 'npm run client' in another\""
+  },
+  "keywords": [
+    "mern",
+    "lost-and-found",
+    "campus",
+    "react",
+    "express",
+    "mongodb",
+    "nodejs"
+  ],
+  "author": "Campus Lost & Found Team",
+  "license": "ISC"
 }
