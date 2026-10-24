@@ -23,9 +23,9 @@ const ItemCard = ({ item }) => {
         <div className="item-category-tag">{item.category}</div>
         <h3 className="item-card-title">{item.title}</h3>
         <p className="item-card-desc">
-          {item.description.length > 95
+          {item.description && item.description.length > 95
             ? `${item.description.substring(0, 95)}...`
-            : item.description}
+            : item.description || ''}
         </p>
 
         <div className="item-card-meta">
