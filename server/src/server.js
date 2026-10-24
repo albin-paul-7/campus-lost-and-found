@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 
 // Load environment variables from server/.env or current working directory
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
@@ -54,10 +55,20 @@ if (process.env.NODE_ENV !== 'production') {
 
 // API Health check endpoint
 app.get('/api/health', (req, res) => {
+  const dbStateMap = {
+    0: 'disconnected',
+    1: 'connected',
+    2: 'connecting',
+    3: 'disconnecting'
+  };
+  const database = dbStateMap[mongoose.connection.readyState] || 'unknown';
+
   res.status(200).json({
     uptime: process.uptime(),
     timestamp: Date.now(),
-    status: 'healthy'
+    status: 'healthy',
+    database,
+    databaseConfigured: !!(process.env.MONGO_URI || process.env.MONGODB_URI)
   });
 });
 
