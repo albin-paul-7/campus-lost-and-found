@@ -7,6 +7,12 @@
 [![Express 5](https://img.shields.io/badge/Backend-Express%205%20%2B%20Node%20v24-green.svg)](https://expressjs.com/)
 [![MongoDB Atlas](https://img.shields.io/badge/Database-MongoDB%20Atlas-47A248.svg)](https://www.mongodb.com/atlas)
 [![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](https://opensource.org/licenses/ISC)
+[![Live Demo](https://img.shields.io/badge/Render-Live%20Demo-brightgreen?logo=render&logoColor=white)](https://campus-lost-and-found-g83o.onrender.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white)](https://github.com/albin-paul-7/campus-lost-and-found)
+
+🌐 **Live Application**: [https://campus-lost-and-found-g83o.onrender.com](https://campus-lost-and-found-g83o.onrender.com)  
+🏥 **API Health Status**: [https://campus-lost-and-found-g83o.onrender.com/api/health](https://campus-lost-and-found-g83o.onrender.com/api/health)  
+📦 **GitHub Repository**: [https://github.com/albin-paul-7/campus-lost-and-found](https://github.com/albin-paul-7/campus-lost-and-found)
 
 ---
 
