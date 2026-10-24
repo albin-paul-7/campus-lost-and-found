@@ -52,16 +52,7 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
-// Health check endpoints
-app.get('/', (req, res) => {
-  res.status(200).json({
-    status: 'online',
-    project: 'Campus Lost and Found Portal API',
-    version: '1.0.0',
-    documentation: '/api/items and /api/auth'
-  });
-});
-
+// API Health check endpoint
 app.get('/api/health', (req, res) => {
   res.status(200).json({
     uptime: process.uptime(),
@@ -73,6 +64,28 @@ app.get('/api/health', (req, res) => {
 // Mount Resource Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/items', require('./routes/itemRoutes'));
+
+// Serve static React client in production (ICTAK Section 9: Deployment & Hosting)
+if (process.env.NODE_ENV === 'production') {
+  const clientDistPath = path.resolve(__dirname, '../../client/dist');
+  app.use(express.static(clientDistPath));
+
+  app.get('*', (req, res, next) => {
+    if (req.originalUrl.startsWith('/api')) {
+      return next();
+    }
+    res.sendFile(path.resolve(clientDistPath, 'index.html'));
+  });
+} else {
+  app.get('/', (req, res) => {
+    res.status(200).json({
+      status: 'online',
+      project: 'Campus Lost and Found Portal API',
+      version: '1.0.0',
+      documentation: '/api/items and /api/auth'
+    });
+  });
+}
 
 // 404 Route Not Found Middleware
 app.use(notFound);

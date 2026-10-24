@@ -5,12 +5,12 @@
   "private": true,
   "scripts": {
     "start": "node server/src/server.js",
+    "build": "npm --prefix server install && npm --prefix client install && npm --prefix client run build",
+    "seed": "node server/src/config/seed.js",
     "server": "npm --prefix server run dev",
     "server:start": "node server/src/server.js",
     "client": "npm --prefix client run dev",
-    "client:build": "npm --prefix client run build",
-    "build": "npm --prefix client run build",
-    "dev": "echo \"Run 'npm run server' in one terminal and 'npm run client' in another\""
+    "client:build": "npm --prefix client run build"
   },
   "keywords": [
     "mern",

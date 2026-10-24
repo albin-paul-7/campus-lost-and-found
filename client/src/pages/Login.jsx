@@ -109,6 +109,28 @@ const Login = () => {
           >
             {submitting ? 'Authenticating...' : 'Sign In'}
           </button>
+
+          <div style={{ margin: '0.75rem 0 0.25rem', textAlign: 'center' }}>
+            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Quick Demo Credentials:</span>
+            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.4rem' }}>
+              <button
+                type="button"
+                className="btn btn-secondary btn-sm"
+                style={{ flex: 1 }}
+                onClick={() => setFormData({ email: 'arun@campus.edu', password: 'password123' })}
+              >
+                Demo Student
+              </button>
+              <button
+                type="button"
+                className="btn btn-secondary btn-sm"
+                style={{ flex: 1 }}
+                onClick={() => setFormData({ email: 'security@campus.edu', password: 'adminpassword123' })}
+              >
+                Campus Security
+              </button>
+            </div>
+          </div>
         </form>
 
         <div className="auth-footer-prompt">
